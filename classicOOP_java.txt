@@ -1,0 +1,48 @@
+enum Color{
+	RED,GREEN,BLUE,YELLOW,BLACK,WHITE;
+}
+
+enum Style{
+	BOTTED,DASHED,CONTINUES;
+}
+
+interface Shape{
+	Color color;
+	Style style;
+
+	void resize(double factor);
+	void move(double dx, double dy);
+}
+
+class Point implements Shape{
+	double x,y;
+
+	void move (double dx, double dy){
+		x+=dx;
+		y+=dy;
+	}
+
+}
+
+class Line implements Shape{
+
+	Point start,end;
+
+	void move(double dx, double dy){
+		start.move(dx,dy);
+		end.move(dx,dy);
+	}
+}
+
+class Polygon{ implements Shape
+	Point[] vertices;
+}
+
+class Ellipse implements Shape{
+	Point center;
+	double radius;
+
+	void move(double dx, double dy){
+		center.move(dx,dy);		
+	}
+}

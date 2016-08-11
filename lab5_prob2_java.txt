@@ -1,0 +1,30 @@
+class Triangle {
+
+	Vertex v1,v2,v3;
+
+	/*
+	*return number of equal sides of a triangle
+	*/
+	int equal_sides(){
+		double l1= v1.length(v2);
+		double l2= v1.length(v3);
+		double l3= v2.length(v3);
+		if (l1==l2==l3) return 3
+		else (l1==l2 || l2==l3 || l1==l3) return 2
+		else return 1;
+	}
+
+}
+
+class Vertex{
+	double x,y,z;
+	
+	/*
+	* Calculate length between this vertex and v
+	*/
+
+	double length (Vertex v){
+		return Math.sqrt((x-v.x)^2 + (y-v.y)^2 + (z-v.z)^2);
+	}
+
+}

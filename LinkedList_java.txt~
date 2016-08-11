@@ -1,0 +1,72 @@
+class LinkedLists{
+	Node head;
+	
+
+}
+class Node{
+	int data;
+	Node next;
+}
+
+
+//=========impl2-functional representaion===========================
+class LinkedList {
+	int data;
+	LinkedList next;
+
+	public LinkedList(int data,LinkedList next){
+		this.data = data;
+		this.next = next;
+	}
+	
+	boolean isEmpty(){
+		return (next==null);
+
+		
+	}
+
+	static boolean isEmpty(LinkedList l){
+		return l==null;
+	} 
+	public static void main(String args[]){
+		LinkedList l0=null;
+		LinkedList l1 = new LinkedList(3,l0);
+		LinkedList l2 = new LinkedList(10,l1);
+	}
+}
+
+//============================= to avoid null================================================== 
+
+interface LinkedList{
+
+}
+class EmptyNode implements LinkedList{
+
+	boolean isEmpty(){
+		return true;	
+	}
+}
+
+class Node implements LinkedList{
+	int data;
+	Node next;
+
+	public Node(int data,Node next){
+		this.data = data;
+		this.next = next;
+	}
+	
+	boolean isEmpty(){
+		return false;
+
+		
+	}
+
+	public static void main(String args[]){
+		LinkedList l0=new EmptyNode();
+		LinkedList l1 = new LinkedList(1,new EmptyNode());
+		LinkedList l2 = new LinkedList(2,l1);
+	}
+
+
+}
