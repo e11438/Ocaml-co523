@@ -22,7 +22,7 @@ match l1 with
 |hd::[]-> hd::l2
 |hd::tl->hd::appendlast tl l2
 |[]->l2;;
-
+(* l1 or l2 is not changed. but a new list has created *)
 
 let rec lastItem l=
 match l with
@@ -37,4 +37,11 @@ match l with
 |[]->(-1)
 |hd::[]->hd
 |hd::tl-> lastItem tl;;
+
+(* find max of a list *)
+let rec maxOfList l=
+match l with
+|[]->(-1)
+|hd::tl-> if hd> maxOfList tl then hd else maxOfList tl;; 
+
 

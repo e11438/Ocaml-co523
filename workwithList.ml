@@ -38,3 +38,10 @@ match l with
 |hd::[]->hd
 |hd::tl-> lastItem tl;;
 
+(* find max of a list *)
+let rec maxOfList l=
+match l with
+|[]->(-1)
+|hd::tl-> let tlmax = maxOfList tl in if hd> tlmax then hd else tlmax;; 
+
+
