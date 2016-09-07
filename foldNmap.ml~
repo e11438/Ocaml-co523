@@ -1,0 +1,9 @@
+List.fold_left;;
+('a -> 'b -> 'a) -> 'a -> 'b list -> 'a = <fun>  
+
+let words = ["asd";"sdsd";"fgfdg"];;
+
+let cat=List.fold_left(^) "" words;;
+val cat : string = "asdsdsdfgfdg"
+
+
